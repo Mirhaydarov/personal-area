@@ -1,0 +1,17 @@
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  padding: var(--padding);
+  border: var(--border-size) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  color: var(--color);
+  background-color: var(--bgc-color);
+  font-size: var(--font-size--sm);
+  transition: all 0.3s ease;
+  border: 2px outset #767676;
+}
+
+.link:focus,
+.link:hover {
+  background-color: var(--bgc-color-lighten);
+}
