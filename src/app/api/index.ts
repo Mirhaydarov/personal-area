@@ -2,7 +2,10 @@
 import { path } from './config';
 
 // Types
-import { FetchTokenTypes } from '../init/types';
+import {
+  FetchTokenTypes,
+  ResponseFetchTypes
+} from '../init/types';
 import { MockUserTypes } from '../components/Login/types';
 
 export const api = {
@@ -15,6 +18,14 @@ export const api = {
       body: JSON.stringify(data),
     });
     const json: Promise<FetchTokenTypes> = response.json();
+    return json;
+  },
+
+  async deleteContactFetch(id: number): Promise<ResponseFetchTypes> {
+    const response = await fetch(`http://localhost:8080/delete-contact/${id}`, {
+    method: 'DELETE'
+    });
+    const json: Promise<ResponseFetchTypes> = response.json();
     return json;
   }
 }
