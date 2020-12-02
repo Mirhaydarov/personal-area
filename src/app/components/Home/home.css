@@ -1,0 +1,26 @@
+:root {
+  --color: #ffffff;
+  --bgc-color: #8a2be2;
+  --bgc-color-lighten: #9741e7;
+
+  --padding: 10px 25px;
+  --border-radius: 3px;
+
+  --font-size-md: 1rem;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome__title {
+  font-size: 3rem;
+  text-align: center;
+}
+.welcome__link-to-login {
+  padding: 0.6rem 1.8rem;
+}
