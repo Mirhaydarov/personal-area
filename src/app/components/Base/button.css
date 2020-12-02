@@ -1,0 +1,38 @@
+:root {
+  --color: #ffffff;
+  --bgc-color: #8a2be2;
+  --bgc-color--lighten: #9741e7;
+  --box-shadow: rgba(0, 0, 0, 0.4);
+
+  --border-color: #767676;
+  --border-style: outset;
+  --border-size: 2px;
+
+  --padding: 0.6rem 0.9rem;
+  --border-radius: 0.2rem;
+  --font-size--sm: 0.9rem;
+}
+
+.button {
+  cursor: pointer;
+  border: var(--border-size) var(--border-style) var(--border-color);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  color: var(--color);
+  background-color: var(--bgc-color);
+  transition: all 0.3s ease;
+}
+
+.button:focus,
+.button:not([disabled]):hover {
+  background-color: var(--bgc-color--lighten);
+}
+
+.button:disabled {
+  background-color: #8a8a8a;
+  box-shadow: 0 0 5px var(--box-shadow);
+}
+
+.button__view-size--sm {
+  font-size: var(--font-size--sm);
+}
