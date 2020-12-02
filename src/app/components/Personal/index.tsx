@@ -76,8 +76,8 @@ export const Personal: FC = (): ReactElement => {
         <h2 className="contacts-title">Contacts</h2>
         <div className="contacts">
           <nav className="contacts__nav">
-            <BaseLink msg="Add contact" to={book.addContact} className="contacts__add-new-contact" />
             <BaseSearchBar />
+            <BaseLink msg="Add contact" to={book.addContact} className="contacts__add-new-contact" />
           </nav>
           {contacts}
         </div>

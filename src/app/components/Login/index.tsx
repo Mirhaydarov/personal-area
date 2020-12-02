@@ -44,64 +44,66 @@ export const Login: FC = (): ReactElement => {
   return (
     <section className="form-section">
       <div className="wrap">
-        <div className="sample">
-          <h2>
-            Email:
-            {' '}
-            <span className="sample__desc">admin@mail.com</span>
-          </h2>
-          <h2>
-            Password:
-            {' '}
-            <span className="sample__desc">admin</span>
-          </h2>
-        </div>
-        <div className="form-box">
-          <form className="form" onSubmit={submitHandler}>
-            <div className="form__title">
-              <h2>Login form</h2>
-            </div>
-            <div className="form__group">
-              <label className="form__label">
-                <span className="icon icon__user" />
-                <input
-                  className="form__input"
-                  type='email'
-                  name='email'
-                  placeholder='Email'
-                  value={email.value}
-                  onChange={(event) => email.onChange(event)}
-                  onBlur={(event) => email.onBlur(event)}
+        <div className="form-section__box">
+          <div className="sample">
+            <h2>
+              Email:
+              {' '}
+              <span className="sample__desc">admin@mail.com</span>
+            </h2>
+            <h2>
+              Password:
+              {' '}
+              <span className="sample__desc">admin</span>
+            </h2>
+          </div>
+          <div className="form-box">
+            <form className="form" onSubmit={submitHandler}>
+              <div className="form__title">
+                <h2>Login form</h2>
+              </div>
+              <div className="form__group">
+                <label className="form__label">
+                  <span className="icon icon__user" />
+                  <input
+                    className="form__input"
+                    type='email'
+                    name='email'
+                    placeholder='Email'
+                    value={email.value}
+                    onChange={(event) => email.onChange(event)}
+                    onBlur={(event) => email.onBlur(event)}
+                    />
+                </label>
+                {( email.isDirty && email.isEmpty ) && <ErrorInput message="can't be empty" />}
+                {( email.isDirty && email.emailError ) && <ErrorInput message="Email is Incorrect" />}
+                {( email.isDirty && email.minLengthError ) && <ErrorInput message="Incorrect length" />}
+                <label className="form__label">
+                  <span
+                    className="icon icon__password"
                   />
-              </label>
-              {( email.isDirty && email.isEmpty ) && <ErrorInput message="can't be empty" />}
-              {( email.isDirty && email.emailError ) && <ErrorInput message="Email is Incorrect" />}
-              {( email.isDirty && email.minLengthError ) && <ErrorInput message="Incorrect length" />}
-              <label className="form__label">
-                <span
-                  className="icon icon__password"
-                />
-                <input
-                  className="form__input"
-                  type='password'
-                  name='password'
-                  placeholder='Password'
-                  value={password.value}
-                  onChange={(event) => password.onChange(event)}
-                  onBlur={(event) => password.onBlur(event)}
-                />
-              </label>
-              {( password.isDirty && password.isEmpty ) && <ErrorInput message="Password can't be empty" />}
-              {( password.isDirty && password.minLengthError ) && <ErrorInput message="Incorrect length" />}
-              {( password.isDirty && password.maxLengthError ) && <ErrorInput message="Incorrect length" />}
-            </div>
-            <BaseButton
-              type='submit'
-              msg='Create Account'
-              className="form__button"
-              disabled={!email.inputValid || !password.inputValid}
-            />
-          </form>
+                  <input
+                    className="form__input"
+                    type='password'
+                    name='password'
+                    placeholder='Password'
+                    value={password.value}
+                    onChange={(event) => password.onChange(event)}
+                    onBlur={(event) => password.onBlur(event)}
+                  />
+                </label>
+                {( password.isDirty && password.isEmpty ) && <ErrorInput message="Password can't be empty" />}
+                {( password.isDirty && password.minLengthError ) && <ErrorInput message="Incorrect length" />}
+                {( password.isDirty && password.maxLengthError ) && <ErrorInput message="Incorrect length" />}
+              </div>
+              <BaseButton
+                type='submit'
+                msg='Login'
+                className="form__button"
+                disabled={!email.inputValid || !password.inputValid}
+              />
+            </form>
+          </div>
         </div>
       </div>
     </section>

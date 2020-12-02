@@ -24,7 +24,7 @@
 }
 .search-bar {
   padding: 0 1.5em;
-  justify-content: flex-end;
+  justify-content: center;
   max-width: 30em;
   display: flex;
 }
@@ -129,5 +129,12 @@
   }
   .search-btn {
     background: #f1f1f1;
+  }
+}
+
+
+@media screen and (min-width: 1000px) {
+  .search-bar {
+    justify-content: flex-end;
   }
 }
