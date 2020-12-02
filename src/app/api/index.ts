@@ -6,6 +6,7 @@ import {
   FetchTokenTypes,
   TokenTypes, 
   ContactsTypes,
+  ContactTypes,
   ResponseFetchTypes
 } from '../init/types';
 import { MockUserTypes } from '../components/Login/types';
@@ -32,6 +33,18 @@ export const api = {
       },
     });
     const json: Promise<ContactsTypes> = response.json();
+    return json;
+  },
+
+  async addContactFetch(data: ContactTypes): Promise<ResponseFetchTypes> {
+    const response = await fetch(`${path.root}/add-contact`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const json: Promise<ResponseFetchTypes> = response.json();
     return json;
   },
 
