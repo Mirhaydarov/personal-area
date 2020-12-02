@@ -4,6 +4,8 @@ import { path } from './config';
 // Types
 import {
   FetchTokenTypes,
+  TokenTypes, 
+  ContactsTypes,
   ResponseFetchTypes
 } from '../init/types';
 import { MockUserTypes } from '../components/Login/types';
@@ -18,6 +20,18 @@ export const api = {
       body: JSON.stringify(data),
     });
     const json: Promise<FetchTokenTypes> = response.json();
+    return json;
+  },
+
+  async getContactsFetch(token: TokenTypes): Promise<ContactsTypes> {
+    const response = await fetch(`${path.root}/contacts`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const json: Promise<ContactsTypes> = response.json();
     return json;
   },
 
