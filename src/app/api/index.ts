@@ -48,6 +48,18 @@ export const api = {
     return json;
   },
 
+  async editContactFetch(data: ContactTypes, id: string): Promise<ResponseFetchTypes> {
+    const response = await fetch(`${path.root}/edit-contact/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const json: Promise<ResponseFetchTypes> = response.json();
+    return json;
+  },
+
   async deleteContactFetch(id: number): Promise<ResponseFetchTypes> {
     const response = await fetch(`http://localhost:8080/delete-contact/${id}`, {
     method: 'DELETE'
