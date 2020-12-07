@@ -14,7 +14,7 @@ import { useInput } from '../Login/hooks/useInput';
 
 // Components
 import { BaseLink } from '../Base/Link';
-import { BaseButton } from '../Base/Button';
+import { Button } from '../Base/Button';
 import { Label } from './Label';
 import { Authorization } from '../Error/Authorization';
 
@@ -100,7 +100,7 @@ export const EditContact: FC<RouterProps> = ({ match, history }): ReactElement =
               />
             </div>
             <div className="edit-form__btn-box">
-              <BaseButton type="submit" msg="Edit Contact" className="edit-form__btn" disabled={disabled}/>
+              <Button type="submit" message="Edit Contact" className="edit-form__btn" disabled={disabled}/>
               <BaseLink msg="Visit Contacts Page" to={book.personal} className="edit-form__visit-contacts-page"/>
             </div>
           </form>

@@ -6,7 +6,7 @@ import { useContactsFetch } from './hooks/useContactsFetch';
 
 // Components
 import { BaseLink } from '../Base/Link';
-import { BaseButton } from '../Base/Button';
+import { Button } from '../Base/Button';
 import { BaseSearchBar } from '../Base/SearchBar';
 import { Authorization } from '../Error/Authorization';
 
@@ -58,10 +58,10 @@ export const Personal: FC = (): ReactElement => {
             msg="Edit"
             to={`${book.editContact}/${id}`}
           />
-          <BaseButton
+          <Button
             className="contacts__list-btn contacts__list-btn--delete"
             type="button"
-            msg="Delete"
+            message="Delete"
             onClick={() => deleteHandler(id)}
             disabled={disabled}
           />

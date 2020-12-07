@@ -7,16 +7,16 @@ import'./button.css';
 type ButtonTypes = 'submit' | 'button' | 'reset';
 
 type PropTypes = {
-  msg: string;
+  message: string;
   type: ButtonTypes;
   className: string;
   onClick?: () => void;
   disabled?: boolean;
 };
 
-export const BaseButton: FC<PropTypes> = ({
+export const Button: FC<PropTypes> = ({
   className,
-  msg,
+  message,
   type,
   onClick,
   disabled,
@@ -27,6 +27,6 @@ export const BaseButton: FC<PropTypes> = ({
     onClick={onClick}
     disabled={disabled}
   >
-    {msg}
+    {message}
   </button>
 );

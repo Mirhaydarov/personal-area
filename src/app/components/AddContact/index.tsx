@@ -13,7 +13,7 @@ import { useInput } from '../Login/hooks/useInput';
 
 // Components
 import { BaseLink } from '../Base/Link';
-import { BaseButton } from '../Base/Button';
+import { Button } from '../Base/Button';
 import { Authorization } from '../Error/Authorization';
 
 // Api
@@ -111,7 +111,7 @@ export const AddContact: FC = (): ReactElement => {
               />
             </div>
             <div className="add-form__btn-box">
-              <BaseButton type="submit" msg="Add Contact" className="add-form__btn" disabled={disabled}/>
+              <Button type="submit" message="Add Contact" className="add-form__btn" disabled={disabled}/>
               <BaseLink msg="Visit Contacts Page" to={book.personal} className="add-form__visit-contacts-page"/>
             </div>
           </form>

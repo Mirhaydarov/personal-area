@@ -10,7 +10,7 @@ import { useInput } from './hooks/useInput';
 import { useRegister } from './hooks/useRegister';
 
 // Components
-import { BaseButton } from '../Base/Button';
+import { Button } from '../Base/Button';
 import { ErrorInput } from '../Error/Input';
 
 // Path
@@ -96,9 +96,9 @@ export const Login: FC = (): ReactElement => {
                 {( password.isDirty && password.minLengthError ) && <ErrorInput message="Incorrect length" />}
                 {( password.isDirty && password.maxLengthError ) && <ErrorInput message="Incorrect length" />}
               </div>
-              <BaseButton
+              <Button
                 type='submit'
-                msg='Login'
+                message='Login'
                 className="form__button"
                 disabled={!email.inputValid || !password.inputValid}
               />
