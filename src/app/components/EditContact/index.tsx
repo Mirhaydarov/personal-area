@@ -13,7 +13,7 @@ import { createMemoryHistory } from 'history';
 import { useInput } from '../Login/hooks/useInput';
 
 // Components
-import { BaseLink } from '../Base/Link';
+import { CustomLink } from '../Base/Link';
 import { Button } from '../Base/Button';
 import { Label } from './Label';
 import { Authorization } from '../Error/Authorization';
@@ -100,8 +100,17 @@ export const EditContact: FC<RouterProps> = ({ match, history }): ReactElement =
               />
             </div>
             <div className="edit-form__btn-box">
-              <Button type="submit" message="Edit Contact" className="edit-form__btn" disabled={disabled}/>
-              <BaseLink msg="Visit Contacts Page" to={book.personal} className="edit-form__visit-contacts-page"/>
+              <Button
+                type="submit"
+                message="Edit Contact"
+                className="edit-form__btn"
+                disabled={disabled}
+              />
+              <CustomLink
+                message="Visit Contacts Page"
+                to={book.personal}
+                className="edit-form__visit-contacts-page"
+              />
             </div>
           </form>
         </div>

@@ -6,21 +6,21 @@ import { Link } from "react-router-dom";
 import'./link.css';
 
 type PropTypes = {
-  msg: string;
+  message: string;
   to: string;
   className: string;
 };
 
-export const BaseLink: FC<PropTypes> = ({
+export const CustomLink: FC<PropTypes> = ({
   className,
-  msg,
+  message,
   to,
 }): ReactElement => (
   <Link
     to={to}
     className={`link ${className}`}
   >
-    {msg}
+    {message}
   </Link>
 );
 

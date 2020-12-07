@@ -5,7 +5,7 @@ import  { FC, ReactElement, useContext, useState } from 'react';
 import { useContactsFetch } from './hooks/useContactsFetch';
 
 // Components
-import { BaseLink } from '../Base/Link';
+import { CustomLink } from '../Base/Link';
 import { Button } from '../Base/Button';
 import { BaseSearchBar } from '../Base/SearchBar';
 import { Authorization } from '../Error/Authorization';
@@ -53,9 +53,9 @@ export const Personal: FC = (): ReactElement => {
       <li className="contacts__item-job">{job}</li>
       <li>
         <div className="contacts__list-box">
-          <BaseLink
+          <CustomLink
             className="contacts__list-btn contacts__list-btn--edit"
-            msg="Edit"
+            message="Edit"
             to={`${book.editContact}/${id}`}
           />
           <Button
@@ -77,7 +77,11 @@ export const Personal: FC = (): ReactElement => {
         <div className="contacts">
           <nav className="contacts__nav">
             <BaseSearchBar />
-            <BaseLink msg="Add contact" to={book.addContact} className="contacts__add-new-contact" />
+            <CustomLink
+              message="Add contact"
+              to={book.addContact}
+              className="contacts__add-new-contact"
+            />
           </nav>
           {contacts}
         </div>
