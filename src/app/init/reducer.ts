@@ -6,7 +6,7 @@ import {
   FETCH_TOKEN,
   FETCH_CONTACTS_SUCCESS,
   DELETE_CONTACT,
-  FIND_CONTACT,
+  FIND_BY_NAME,
   InitialStateTypes,
   ContextAppTypes,
   RootReducerActionsTypes
@@ -39,7 +39,7 @@ export const rootReducer = (state = initialState, action: RootReducerActionsType
         ...state,
       };
     
-    case FIND_CONTACT:
+    case FIND_BY_NAME:
       return {
         ...state,
         searchValue: action.payload,

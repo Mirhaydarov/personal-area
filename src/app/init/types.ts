@@ -46,9 +46,9 @@ export type deleteContactAction = {
   payload: number;
 }
 
-export const FIND_CONTACT = 'FIND_CONTACT';
+export const FIND_BY_NAME = 'FIND_BY_NAME';
 export type FindContactAction = {
-  type: typeof FIND_CONTACT;
+  type: typeof FIND_BY_NAME;
   payload: FilterContactTypes;
 };
 

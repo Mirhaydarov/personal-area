@@ -7,7 +7,7 @@ import { useContactsFetch } from './hooks/useContactsFetch';
 // Components
 import { CustomLink } from '../Base/Link';
 import { Button } from '../Base/Button';
-import { BaseSearchBar } from '../Base/SearchBar';
+import { SearchBar } from '../Base/SearchBar';
 import { Authorization } from '../Error/Authorization';
 
 // Actions
@@ -76,7 +76,7 @@ export const Personal: FC = (): ReactElement => {
         <h2 className="contacts-title">Contacts</h2>
         <div className="contacts">
           <nav className="contacts__nav">
-            <BaseSearchBar />
+            <SearchBar />
             <CustomLink
               message="Add contact"
               to={book.addContact}

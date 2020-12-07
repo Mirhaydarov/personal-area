@@ -1,8 +1,15 @@
 // Core
-import { FC, ReactElement, useContext, useState, ChangeEvent } from 'react';
+import {
+  FC,
+  ReactElement,
+  useContext,
+  useState,
+  ChangeEvent,
+  FormEvent
+} from 'react';
 
 // Actions
-import { findContact } from '../../init/actions';
+import { findByName } from '../../init/actions';
 
 // Instrument
 import { ContextApp } from '../../init/reducer';
@@ -10,25 +17,36 @@ import { ContextApp } from '../../init/reducer';
 // Styles
 import './searchBar.css';
 
-export const BaseSearchBar: FC = (): ReactElement => {
+export const SearchBar: FC = (): ReactElement => {
   const [searchValue, setSearchValue] = useState('');
   const { dispatch } = useContext(ContextApp);
 
-  const searchContactHandler = (
-    event: ChangeEvent<HTMLInputElement>
-  ): void => {
+  function submitHandler(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
+
+  function substringSearch(value: string, to: number, from: number): string {
+    return value.substring(to, from);
+  }
+
+  function searchHandler(event: ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
 
-    setSearchValue(value.substring(0, 20));
-    dispatch(findContact(value));
-  };
+    setSearchValue(substringSearch(value, 0, 20));
+    dispatchSearch(value);
+  }
+
+  function dispatchSearch(value: string) {
+    dispatch(findByName(value));
+  }
 
   return (
-    <form className="search-bar" onSubmit={event => event.preventDefault()}>
+    <form className="search-bar" onSubmit={submitHandler}>
       <input 
         type='search'
-        required value={searchValue}
-        onChange={(event) => searchContactHandler(event)}
+        required
+        value={searchValue}
+        onChange={searchHandler}
       />
       <button className="search-btn" type='submit'>
         <span>Search</span>

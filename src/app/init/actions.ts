@@ -3,7 +3,7 @@ import {
   FETCH_TOKEN,
   FETCH_CONTACTS_SUCCESS,
   DELETE_CONTACT,
-  FIND_CONTACT,
+  FIND_BY_NAME,
   TokenTypes,
   ContactsTypes,
   FilterContactTypes,
@@ -34,9 +34,9 @@ export const deleteContact = (payload: number): deleteContactAction => {
   }
 };
 
-export function findContact(payload: FilterContactTypes): FindContactAction {
+export function findByName(payload: FilterContactTypes): FindContactAction {
   return {
-    type: FIND_CONTACT,
+    type: FIND_BY_NAME,
     payload,
   };
 }
