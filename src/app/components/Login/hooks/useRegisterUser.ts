@@ -15,7 +15,7 @@ import { ContextApp } from '../../../init/reducer';
 // Api
 import { api } from '../../../api';
 
-export const useRegister = (mockData: MockUserTypes) => {
+export const useRegisterUser = (mockData: MockUserTypes) => {
   const { state, dispatch } = useContext(ContextApp);
   const { access_token } = state;
 
